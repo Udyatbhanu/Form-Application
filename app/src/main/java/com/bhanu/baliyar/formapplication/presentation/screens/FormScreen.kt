@@ -28,15 +28,17 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
+import com.bhanu.baliyar.formapplication.core.navigation.LocalNavController
 import com.bhanu.baliyar.formapplication.core.navigation.Routes
 
 data class FormData(val name: String = "", val agree: Boolean = false)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FormScreen(navController: NavController) {
+fun FormScreen() {
+    val navController = LocalNavController.current
     Scaffold(
         topBar = { TopAppBar(title = { Text(text = "Form Application") }) },
         content = { innerPadding ->
@@ -103,10 +105,10 @@ fun FormScreen(navController: NavController) {
     )
 }
 
-//@Preview(showBackground = true, showSystemUi = true)
-//@Composable
-//fun FormScreenPreview() {
-//    MaterialTheme {
-//        FormScreen()
-//    }
-//}
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun FormScreenPreview() {
+    MaterialTheme {
+        FormScreen()
+    }
+}

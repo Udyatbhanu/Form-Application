@@ -17,7 +17,7 @@ fun AppNav(navController: NavHostController, modifier: Modifier = Modifier) {
         modifier = modifier
     ) {
         composable(Routes.Form.route) {
-            FormScreen(navController = navController)
+            FormScreen()
         }
         composable(Routes.Details.route) {
             DetailsScreen()
