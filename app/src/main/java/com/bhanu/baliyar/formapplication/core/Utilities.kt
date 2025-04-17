@@ -12,14 +12,18 @@ import androidx.navigation.compose.rememberNavController
 data class AppSpacing(val small: Dp = 4.dp, val medium: Dp = 8.dp, val large: Dp = 16.dp)
 
 val LocalSpacing = staticCompositionLocalOf { AppSpacing() }
-val  LocalNavProvider = compositionLocalOf<NavHostController> {  error("Nav controller not provided") }
+val LocalNavProvider =
+    compositionLocalOf<NavHostController> { error("Nav controller not provided") }
 
 @Composable
-fun AppProviders(navController: NavHostController = rememberNavController(),content : @Composable () -> Unit){
+fun AppProviders(
+    navController: NavHostController = rememberNavController(),
+    content: @Composable () -> Unit
+) {
     CompositionLocalProvider(
         LocalNavProvider provides navController,
-        LocalSpacing provides AppSpacing()) {
+        LocalSpacing provides AppSpacing()
+    ) {
         content()
     }
-
 }

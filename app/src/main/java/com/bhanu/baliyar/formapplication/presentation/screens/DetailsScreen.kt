@@ -15,6 +15,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.bhanu.baliyar.formapplication.core.LocalNavProvider
+import com.bhanu.baliyar.formapplication.presentation.components.SimpleAlertDialog
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -38,6 +39,7 @@ fun DetailsScreen() {
             }
         )
     }, content = { innerPadding ->
+//        SimpleAlertDialog(showDialog = true, onConfirm = {}, onDismiss = {})
         Text(modifier = Modifier.padding(innerPadding), text = "DetailsScreen")
     })
 }

@@ -37,18 +37,19 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.bhanu.baliyar.formapplication.R
 import com.bhanu.baliyar.formapplication.core.LocalNavProvider
 import com.bhanu.baliyar.formapplication.core.LocalSpacing
 import com.bhanu.baliyar.formapplication.core.navigation.Routes
+import com.bhanu.baliyar.formapplication.presentation.components.SimpleAlertDialog
 
 
 val fruits = listOf<String>("Apple", "Banana", "Orange", "Mango")
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SearchScreen() {
+fun SearchScreen(viewModel: SearchScreenViewModel = viewModel()) {
     val navController = LocalNavProvider.current
     val spacing = LocalSpacing.current
     Scaffold(
@@ -97,19 +98,17 @@ fun SearchScreen() {
                     )
 
                     Spacer(Modifier.height(8.dp))
-
                     SimpleDropdownMenu()
-
                     Spacer(Modifier.height(8.dp))
-
                     FruitsList(filteredFruits)
-
-
-
                 }
                 Button(
                     modifier = Modifier.fillMaxWidth().align (Alignment.BottomCenter),
-                    onClick = { navController.navigate(Routes.Details.route)},
+                    onClick = {
+
+                        navController.navigate(Routes.Details.route)
+
+                              },
                     shape = RoundedCornerShape(7.dp),
                     content = { Text("Click Me") }
                 )

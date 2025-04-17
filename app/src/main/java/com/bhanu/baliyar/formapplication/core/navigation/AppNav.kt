@@ -22,10 +22,8 @@ fun AppNav(modifier: Modifier = Modifier) {
         composable(Routes.Home.route) {
             SearchScreen()
         }
-
         composable(Routes.Details.route) {
             DetailsScreen()
         }
-
     }
 }
