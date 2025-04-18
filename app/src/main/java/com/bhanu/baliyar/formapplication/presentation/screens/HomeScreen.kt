@@ -78,7 +78,6 @@ fun BottomNav(navController: NavController, currentRoute: String?) {
                     }
                 },
                 icon = { Icon(Icons.Default.Home, contentDescription = "Home") },
-                modifier = Modifier.padding(localSpacing.large),
                 label = { Text("Home") }
             )
         }
