@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -41,14 +43,45 @@ android {
 
 dependencies {
 
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
+
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
+
+    testImplementation (libs.paparazzi) // use the latest version available
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.material.icons.extended)
+
+    implementation(libs.androidx.navigation.compose)
+
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
+
+
+    // Retrofit core
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+    // Optional: For logging network requests
+    implementation(libs.logging.interceptor)
+
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
+    // Optional: ViewModel Hilt extension
+    implementation(libs.androidx.hilt.navigation.compose)
+    ksp(libs.androidx.hilt.compiler)
+
+    implementation(libs.androidx.material)
+    implementation (libs.androidx.material3)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

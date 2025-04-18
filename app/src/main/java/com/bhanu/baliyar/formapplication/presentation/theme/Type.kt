@@ -1,4 +1,4 @@
-package com.bhanu.baliyar.formapplication.ui.theme
+package com.bhanu.baliyar.formapplication.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
